@@ -21,5 +21,13 @@ void OnStart()
       }else{
       Print("Ticket not found");
       }
+      Print(TimeCurrent());
+      Print(Hour());
+      Print(Minute());
+      if(OrderSelect(0,SELECT_BY_POS,MODE_TRADES))
+      {
+         Print(OrderTicket() + "==" + OrderOpenTime());
+         Print(iBarShift(NULL,PERIOD_H4,OrderOpenTime()));
+      }
   }
 //+------------------------------------------------------------------+
